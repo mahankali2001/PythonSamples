@@ -13,7 +13,7 @@ import urllib3
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 es = Elasticsearch(
-    ["https://elastic:<password>@localhost:9200"],
+    ["https://elastic:UZlLm-N23cIo6S7xZ=on@localhost:9200"],
     verify_certs=False
 )
 
@@ -39,10 +39,21 @@ print("Products indexed successfully!")
 
 
 # Perform a search query
+# query = {
+#     "query": {
+#         "match": {
+#             "name": "iPhone"
+#         }
+#     }
+# }
+
 query = {
     "query": {
-        "match": {
-            "name": "iPhone"
+        "bool": {
+            "should": [
+                {"match": {"name": {"query": "iPhone", "boost": 2}}},
+                {"match": {"description": "iPhone"}}
+            ]
         }
     }
 }
@@ -55,14 +66,14 @@ for hit in response["hits"]["hits"]:
     print(f"Product Name: {hit['_source']['name']}, Price: {hit['_source']['price']}")
 
 # Fuzzy Search 
-query = {
-    "fuzzy": {
-        "name": {
-            "value": "iphne",
-            "fuzziness": "AUTO"
-        }
-    }
-}
+# query = {
+#     "fuzzy": {
+#         "name": {
+#             "value": "iphne",
+#             "fuzziness": "AUTO"
+#         }
+#     }
+# }
 
 # response = es.search(index="products", body=query)
 
@@ -70,3 +81,10 @@ query = {
 # print("Search Results:")
 # for hit in response["hits"]["hits"]:
 #     print(f"Product Name: {hit['_source']['name']}, Price: {hit['_source']['price']}")
+
+
+
+# TF-IDF: The core algorithm used for scoring.
+# Boosting: The boost parameter in the query increases the relevance score of documents where the name field matches "iPhone" more than those where the description field matches "iPhone".
+# Field Length Normalization: Automatically handled by Elasticsearch to ensure fair scoring across fields of different lengths.
+# Coordination Factor: Automatically considered by Elasticsearch to score documents matching more query terms higher.
