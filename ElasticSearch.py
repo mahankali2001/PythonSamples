@@ -13,7 +13,7 @@ import urllib3
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 es = Elasticsearch(
-    ["https://elastic:UZlLm-N23cIo6S7xZ=on@localhost:9200"],
+    ["https://elastic:<password>@localhost:9200"],
     verify_certs=False
 )
 
