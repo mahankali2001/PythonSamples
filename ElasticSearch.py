@@ -65,6 +65,17 @@ print("Search Results:")
 for hit in response["hits"]["hits"]:
     print(f"Product Name: {hit['_source']['name']}, Price: {hit['_source']['price']}")
 
+
+# Open Kibana -> Dev Tools -> Shell / Explain API, run following query to understand scoring
+# GET /products/_explain/1
+# {
+#   "query": {
+#     "match": {
+#       "name": "iPhone"
+#     }
+#   }
+# }
+
 # Fuzzy Search 
 # query = {
 #     "fuzzy": {
