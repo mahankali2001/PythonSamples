@@ -1,7 +1,7 @@
 from itertools import combinations
 
 class solution:
-    def calItemFrequency(self, items:list):
+    def calitemfrequency(self, items:list):
         dic = {}
         for i in items:
             # print (tuple(i))
@@ -27,7 +27,8 @@ if __name__ == "__main__":
     # input
     trans = [["apple", "banana", "lemon"], ["banana", "berry", "lemon", "orange"], ["banana", "berry", "lemon"]]
     s = solution()
-    result = s.calItemFrequency(trans)
+    result = s.calitemfrequency(trans)
+    print(result)
     for key, value in result.items():
         print("{} - {}".format(key,value))
 
