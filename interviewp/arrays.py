@@ -1,4 +1,15 @@
 class solution:
+    def findArrayNumbers(self, arr, target):
+        diff = 0
+        for i in range(len(arr)):
+            diff = target - arr[i]
+            if diff > 0 and diff in arr:
+                j = arr.index(diff)
+                return [i, j]
+
+        return None
+
+
     def mergeSortedArrays(self, a1, a2):
         a3 = []
         a1c = 0
@@ -30,10 +41,13 @@ class solution:
                 
 if __name__ == "__main__":
     s = solution()
-    a1 = [1,4,8,9]
-    a2 = [2,3,6,10]
-    print(s.mergeSortedArrays(a1, a2))
+    # a1 = [1,4,8,9]
+    # a2 = [2,3,6,10]
+    # print(s.mergeSortedArrays(a1, a2))
+
+    # a1 = [1,4,7,9]
+    # a2 = [2,3,6,8]
+    # print(s.mergeSortedArrays(a1, a2))
 
     a1 = [1,4,7,9]
-    a2 = [2,3,6,8]
-    print(s.mergeSortedArrays(a1, a2))
+    print(s.findArrayNumbers(a1, 8))
