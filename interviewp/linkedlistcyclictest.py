@@ -1,9 +1,9 @@
 import unittest
-from linkedlistcycle import solution, node, linkedlist
+from linkedlist import solution, node, linkedlist
 
 
 
-class linkedlistcycletest(unittest.TestCase):
+class linkedlistcyclictest(unittest.TestCase):
     def setUp(self):
         self.solution = solution()
 	    

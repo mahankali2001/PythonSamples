@@ -34,6 +34,9 @@ class solution:
             except AttributeError:
                 break
         return False
+    
+    def reverseLL(self, ll: linkedlist):
+        pass
 
 
 if __name__ == "__main__":
