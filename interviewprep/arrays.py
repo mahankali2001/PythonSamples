@@ -41,13 +41,13 @@ class solution:
                 
 if __name__ == "__main__":
     s = solution()
-    # a1 = [1,4,8,9]
-    # a2 = [2,3,6,10]
-    # print(s.mergeSortedArrays(a1, a2))
+    a1 = [1,4,8,9]
+    a2 = [2,3,6,10]
+    print(s.mergeSortedArrays(a1, a2))
 
-    # a1 = [1,4,7,9]
-    # a2 = [2,3,6,8]
-    # print(s.mergeSortedArrays(a1, a2))
+    a1 = [1,4,7,9]
+    a2 = [2,3,6,8]
+    print(s.mergeSortedArrays(a1, a2))
 
     a1 = [1,4,7,9]
     print(s.findArrayNumbers(a1, 8))
