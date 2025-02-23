@@ -37,6 +37,18 @@ class solution:
                     q.put(node.right)
             result.append(level)
         print(result)
+    
+    def dfs(self, root):
+        st = []
+        st.append(root)
+        while len(st) !=0 :
+            node = st.pop()
+            print(node.value, end = " -> ")
+            if node.right:
+                st.append(node.right)
+            if node.left:
+                st.append(node.left)
+        print(None)
 
 if __name__ == "__main__":
     root = treenode(60)
@@ -56,4 +68,6 @@ if __name__ == "__main__":
     s.levelorderorbfs(root)
 
     s.levelorderorbfsgroups(root)
+
+    s.dfs(root)
 
