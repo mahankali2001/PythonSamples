@@ -43,7 +43,7 @@ class solution:
         st.append(root)
         while len(st) !=0 :
             node = st.pop()
-            print(node.value, end = " -> ")
+            print(node.value, end = "-> ")
             if node.right:
                 st.append(node.right)
             if node.left:
