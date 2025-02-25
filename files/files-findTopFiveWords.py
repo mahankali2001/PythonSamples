@@ -14,19 +14,17 @@ def topFiveWords(file):
             for word in words:
                 word = word.lower()
                 if word not in words_toskip:
-                    if word in word_counts:
-                        word_counts[word] += 1
-                    else:
-                        word_counts[word] = 1
+                    word_counts[word] = word_counts.get(word, 0) + 1 # Increment the count of the word in the dictionary by 1
     
     sorted_words = sorted(word_counts.items(), key=lambda item: item[1], reverse=True) # Sort the words by their counts in descending order
+    print(sorted_words[:5])
     
-    top_five = sorted_words[:5]
+    # top_five = sorted_words[:5]
     
-    for word, count in top_five:
-        print(f'{word}: {count}')
+    # for word, count in top_five:
+    #     print(f'{word}: {count}')
 
-filename = 'data/photoshop.txt'
+filename = '../data/photoshop.txt'
 topFiveWords(filename)
 
 
