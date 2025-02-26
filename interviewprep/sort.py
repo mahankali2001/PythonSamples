@@ -21,3 +21,29 @@ if __name__ == "__main__":
     print("Original array:", arr)
     s.qsort(arr, 0, len(arr)-1)
     print("Sorted array:", arr)
+
+
+#     3,   6, 8, 10, 1, 2, 1  
+# p1  p,s  i
+#     3,   6, 8, 10, 1, 2, 1
+# p2  p,s     i
+#     3,   6, 8, 10, 1, 2, 1
+# p3  p,s         i
+
+#     3,   6, 8, 10, 1, 2, 1
+# p4  p,s            i
+# p4  p    s         i
+#     3,   1, 8, 10, 6, 2, 1  
+# p4  p    s         i
+
+# p5  p    s             i
+# p5  p       s          i
+#     3,   1, 2, 10, 6, 8, 1  
+# p5  p       s         i
+
+# p6  p       s             i
+# p6  p           s         i
+#     3,   1, 2, 1, 6, 8, 10
+# p6  p           s         i
+
+#     1,   1, 2, 3, 6, 8, 10

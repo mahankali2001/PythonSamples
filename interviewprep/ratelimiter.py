@@ -14,7 +14,7 @@ class ratelimiter:
             self.requests[customerId] = (1, mydt)
             return True
     
-        count, dt = self.requests[customerId] # tuple of count & timestamp and unpack it to assign to count, dt
+        count, dt = self.requests[customerId] # tuple of count & timestamp
         # count, dt = val
         time_diff = (datetime.now() - dt).total_seconds()
         
