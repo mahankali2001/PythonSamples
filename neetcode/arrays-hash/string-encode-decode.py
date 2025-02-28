@@ -3,6 +3,11 @@ import base64
 class Solution:
 
     def encode(self, strs: list[str]) -> str:
+        if len(strs) == 0:
+            return None
+        if strs[0] == "":
+            return ""
+
         # str = ','.join(strs)
         # return str
         
@@ -25,6 +30,11 @@ class Solution:
 
 
     def decode(self, s: str) -> list[str]:
+        if s == None:
+            return []
+        if s == "":
+            return [""]
+        
         # return s.split(",")
         
         decoded_str = base64.b64decode(s)
@@ -50,5 +60,7 @@ class Solution:
 if __name__ == "__main__":
     s = Solution()
     str = s.encode(["neet","code","love","you"])
+    # str = s.encode([])
+    # str = s.encode([""])
     print(str)
     print(s.decode(str))
