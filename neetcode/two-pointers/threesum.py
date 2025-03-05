@@ -17,9 +17,10 @@ class Solution(object):
             
         return nlist
 
-s = Solution()
-print(s.threesum([-1,0,1,2,-1,-4]))
-print(s.threesum([0,1,1]))
-print(s.threesum([0,0,0]))
-print(s.threesum([0,0,0,0]))
-print(s.threesum([-2,0,1,1,2]))
+if __name__ == "__main__":
+    s = Solution()
+    print(s.threesum([-1,0,1,2,-1,-4]))
+    print(s.threesum([0,1,1]))
+    print(s.threesum([0,0,0]))
+    print(s.threesum([0,0,0,0]))
+    print(s.threesum([-2,0,1,1,2]))
